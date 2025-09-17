@@ -1,0 +1,125 @@
+:root {
+          --y: clamp(24px, 5.5vw, 40px);
+          --gap: clamp(10px, 3.5vw, 18px);
+          --padX: clamp(16px, 4vw, 28px);
+        }
+        .sol {
+          width: 100%;
+          padding: var(--y) 0;
+          color: #fff;
+        }
+        .inner {
+          padding: 0 var(--padX);
+        }
+
+        .wps-title {
+          font-family: Sora, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+          text-align: center;
+          color: rgba(255, 255, 255, 0.96);
+          margin: 0 0 12px;
+          letter-spacing: -0.01em;
+          word-break: break-word;
+          font-weight: 700;
+        }
+        .wps-titleGrad {
+          background: linear-gradient(135deg, var(--primary), var(--secondary));
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .subline {
+          font-family: Sora, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+          text-align: center;
+          margin: 0 0 var(--y);
+          color: rgba(255, 255, 255, 0.85);
+          line-height: 1.6;
+        }
+
+        .hi {
+          background: linear-gradient(135deg, var(--primary), var(--secondary));
+          -webkit-background-clip: text;
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        .block {
+          display: flex;
+          flex-direction: column;
+          gap: var(--gap);
+          margin-bottom: var(--y);
+        }
+        .block:last-of-type {
+          margin-bottom: 0;
+        }
+
+        .copy {
+          display: grid;
+          gap: 6px;
+        }
+        .h {
+          margin: 0;
+          font-weight: 600;
+          text-align: center;
+          color: #fff;
+          font-family: Sora, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        }
+
+        .kicker {
+          margin: 0;
+          color: rgba(255, 255, 255, 0.85);
+          text-align: left;
+          font-family: Sora, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+          font-size: 14px;
+          line-height: 1.5;
+        }
+
+        .p {
+          color: #cbd5e1;
+          line-height: 1.65;
+          margin: 0;
+          text-align: left;
+          font-family: Sora, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+          font-size: 16px;
+        }
+
+        .img {
+          width: 100%;
+          height: clamp(160px, 48vw, 320px);
+          object-fit: cover;
+          border-radius: 16px;
+        }
+
+        @media (min-width: 768px) {
+          .block {
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            align-items: center;
+            gap: clamp(16px, 3vw, 28px);
+          }
+          .img {
+            height: clamp(220px, 24vw, 360px);
+            border-radius: 18px;
+          }
+          .block.alt .copy {
+            order: 2;
+          }
+          .block.alt .img {
+            order: 1;
+          }
+
+          .kicker {
+            font-size: 20px;
+            line-height: 1.5;
+          }
+          .p {
+            font-size: 18px;
+          }
+        }
+
+        @media (min-width: 1100px) {
+          .img {
+            height: clamp(260px, 24vw, 420px);
+            border-radius: 20px;
+          }
+        }

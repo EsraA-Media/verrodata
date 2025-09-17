@@ -1,0 +1,227 @@
+ .wrap {
+          width: 100%;
+          position: relative;
+          overflow: hidden;
+          margin-top: -1px;
+        }
+        .bgGlow {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          z-index: 0;
+          background: radial-gradient(
+              42% 40% at 85% 30%,
+              color-mix(in oklab, var(--secondary), transparent 88%) 0%,
+              transparent 60%
+            ),
+            radial-gradient(
+              36% 34% at 15% 70%,
+              color-mix(in oklab, var(--primary), transparent 88%) 0%,
+              transparent 60%
+            );
+        }
+        .inner {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 72px 20px 84px;
+          position: relative;
+          z-index: 1;
+        }
+        .title {
+          color: #fff;
+          text-align: center;
+          margin: 0 0 40px;
+        }
+
+        /* Rail Desktop */
+        .railH {
+          position: relative;
+          height: 2px;
+          width: 100%;
+          margin: 44px 0 22px;
+          display: none;
+        }
+        .railBase {
+          position: absolute;
+          inset: 0;
+          background: rgba(255, 255, 255, 0.12);
+        }
+        .railFill {
+          position: absolute;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          width: 0%;
+          opacity: 0.98;
+          background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        .stepsH {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: none;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 18px;
+          align-items: start;
+        }
+        .itemH {
+          display: grid;
+          justify-items: center;
+          text-align: center;
+          gap: 12px;
+          position: relative;
+        }
+        .head {
+          display: grid;
+          place-items: center;
+          gap: 12px;
+        }
+
+        .itemH .chip,
+        .itemV .chip {
+          position: relative;
+          overflow: visible;
+          transition: box-shadow 0.18s ease, background 0.18s ease,
+            border-color 0.18s ease;
+        }
+        .itemH .chip {
+          width: 64px;
+          height: 64px;
+          display: grid;
+          place-items: center;
+          border-radius: 999px;
+          color: #f5f3ff;
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        }
+        .itemH .chip.on {
+          background: linear-gradient(
+            135deg,
+            color-mix(in oklab, var(--primary), transparent 78%),
+            color-mix(in oklab, var(--secondary), transparent 80%)
+          );
+          border-color: color-mix(in oklab, var(--secondary), white 20%);
+        }
+
+        /* Label */
+        .lbl {
+          font-size: clamp(14px, 2.2vw, 16px);
+          line-height: 1.5;
+          font-weight: 500;
+          letter-spacing: 0.01em;
+          color: rgba(255, 255, 255, 0.86);
+          transition: color 0.15s ease;
+          font-family: Sora, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+            sans-serif;
+        }
+        .lbl.on {
+          color: #fff;
+        }
+
+        /* Description bubbles */
+        .dropdown {
+          width: 100%;
+        }
+        .dropInner {
+          margin-top: 8px;
+          max-width: 360px;
+          padding: 12px 14px;
+          border-radius: 12px;
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          color: rgba(255, 255, 255, 0.92);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        /* Mobile rail */
+        .railV {
+          position: absolute;
+          left: 30px;
+          top: 140px;
+          bottom: 84px;
+          width: 2px;
+          display: block;
+        }
+        .railBaseV {
+          position: absolute;
+          inset: 0;
+          background: rgba(255, 255, 255, 0.12);
+        }
+        .railFillV {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 0%;
+          opacity: 0.98;
+          background: linear-gradient(180deg, var(--primary), var(--secondary));
+        }
+
+        .stepsV {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          display: grid;
+          gap: 18px;
+        }
+        .itemV {
+          position: relative;
+        }
+        .headV {
+          display: grid;
+          grid-template-columns: 60px 1fr;
+          gap: 14px;
+          align-items: center;
+          width: 100%;
+        }
+
+        .itemV .chip {
+          width: 56px;
+          height: 56px;
+          display: grid;
+          place-items: center;
+          border-radius: 999px;
+          color: #f5f3ff;
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.18);
+          box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.06);
+        }
+        .itemV .chip.on {
+          background: linear-gradient(
+            135deg,
+            color-mix(in oklab, var(--primary), transparent 78%),
+            color-mix(in oklab, var(--secondary), transparent 80%)
+          );
+          border-color: color-mix(in oklab, var(--secondary), white 20%);
+        }
+
+        .dropdownV {
+          grid-column: 2 / -1;
+        }
+        .dropdownV .dropInner {
+          margin-top: 8px;
+          padding: 12px 14px;
+          border-radius: 12px;
+          background: rgba(255, 255, 255, 0.06);
+          border: 1px solid rgba(255, 255, 255, 0.12);
+          color: rgba(255, 255, 255, 0.92);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25),
+            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+        }
+
+        /* Breakpoints */
+        @media (min-width: 760px) {
+          .railH,
+          .stepsH {
+            display: grid;
+          }
+          .railV,
+          .stepsV {
+            display: none;
+          }
+        }
